@@ -165,6 +165,12 @@ body
   padding:10px;
   margin:10px;
 }
+#body .page h1
+{
+  padding:10px;
+  margin:10px;
+  font-size:30px;
+}
 
 @media all and (min-width:540px) {
   #body .page .mid

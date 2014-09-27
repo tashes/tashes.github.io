@@ -195,3 +195,21 @@ body
     left:-250px;
   }
 }
+@media all and (min-width:740px) {
+  #body .page .mid
+  {
+    width:1px;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:50%;
+  }
+  #body .page .mid_port
+  {
+    width:700px;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:-350px;
+  }
+}

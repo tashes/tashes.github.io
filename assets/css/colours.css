@@ -5,5 +5,7 @@
 }
 .page h1
 {
+  border-top: 5px solid #86B404;
+  border-bottom: 5px solid #86B404;
   color:#86B404;
 }

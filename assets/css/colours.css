@@ -1,9 +1,9 @@
 .page section
 {
-  border-top: 5px solid #4B610B;
-  border-bottom: 5px solid #4B610B;
+  border-top: 5px solid ##86B404;
+  border-bottom: 5px solid ##86B404;
 }
 .page h1
 {
-  color:#4B610B;
+  color:#86B404;
 }

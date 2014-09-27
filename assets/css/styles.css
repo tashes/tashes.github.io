@@ -165,31 +165,6 @@ body
   padding:10px;
   margin:10px;
 }
-#home
-{
-  background:#FACC2E;
-}
-#home section
-{
-  border-top: 5px solid #B18904;
-  border-bottom: 5px solid #B18904;
-}
-#home h1
-{
-  color:#B18904;
-}
-#projects
-{
-  background:#2ECCFA;
-}
-#blog
-{
-  background:#BFFF00;
-}
-#about
-{
-  background:#FF4000;
-}
 
 @media all and (min-width:540px) {
   #body .page .mid

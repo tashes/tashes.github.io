@@ -1,0 +1,32 @@
+{
+  "tags": ["philosophy","code"],
+  "posts": [
+     {
+       "title": "meh",
+       "date": "Wednesday 21 August 2014",
+       "extra": "Some text describing the article in less than 140 characters.",
+       "img": "url('assets/img/back.jpg')",
+       "link": "data/index.php?src=blog&content=article&date=Wednesday_21_August_2014&title=meh",
+       "tags": ["philosophy"],
+       "index": 0
+     },
+     {
+       "title": "meh1",
+       "date": "Wednesday 21 August 2014",
+       "extra": "Some text describing the article in less than 140 characters.",
+       "img": "",
+       "link": "data/index.php?src=blog&content=article&date=Wednesday_21_August_2014&title=meh1",
+       "tags": ["philosophy","code"],
+       "index": 1
+     },
+     {
+       "title": "meh2",
+       "date": "Wednesday 21 August 2014",
+       "extra": "Some text describing the article in less than 140 characters. Here.",
+       "img": "",
+       "link": "data/index.php?src=blog&content=article&date=Wednesday_21_August_2014&title=meh1",
+       "tags": ["code"],
+       "index": 2
+     }
+  ]
+}

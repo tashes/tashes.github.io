@@ -1,0 +1,12 @@
+{
+  "summary": "Somethings about moi. Nothing secrety though :E",
+  "achievments": [
+    {
+      "name": "Build A Blog",
+      "date": "Wednesday 8 October 2014",
+      "loc": "India",
+      "cover": "rgb(200,200,200)",
+      "link": "data/index.php?src=about&content=article&title=Build_A_Blog"
+    }
+  ]
+}

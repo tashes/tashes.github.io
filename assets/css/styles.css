@@ -7,7 +7,11 @@ body
   position:absolute;
   top:0px;
   left:0px;
-  background:rgb(255,255,255);
+  background:rgb(235,235,235);
+}
+.button
+{
+  cursor:pointer;
 }
 
 #viewport
@@ -27,10 +31,9 @@ body
   position:absolute;
   top:0px;
   left:0px;
-  background:rgb(34,48,54);
-  transition:1s;
-  -moz-transition:1s;
-  -webkit-transition:1s;
+  transition:top 1s;
+  -moz-transition:top 1s;
+  -webkit-transition:top 1s;
 }
 #head.closed
 {
@@ -49,6 +52,7 @@ body
 }
 #head_title_text
 {
+  font-family:Serif;
   font-size:40px;
   text-align:center;
   color:white;
@@ -60,13 +64,13 @@ body
 #head_title_date
 {
   margin-top:5px;
-  display:none;
   font-size:15px;
+  text-align:center;
   color:white;
 }
-#head.article #head_title_date
+#head.loading #head_title_date
 {
-  display:block;
+  display:none;
 }
 #head_title_loading
 {
@@ -91,6 +95,7 @@ body
   left:0px;
   display:none;
   font-size:0px;
+  background:rgba(48,48,48,0.48);
 }
 #head.closed #head_menu
 {
@@ -101,6 +106,7 @@ body
   width:25%;
   height:40px;
   display:inline-block;
+  font-family:Fira;
   font-size:15px;
   text-align:center;
   line-height:40px;
@@ -144,7 +150,7 @@ body
   top:0px;
   left:0px;
 }
-#body .page .mid_port
+#body .page .mid .mid_port
 {
   width:100%;
   height:100%;
@@ -154,80 +160,248 @@ body
   overflow-x:hidden;
   overflow-y:visible;
 }
-#body .page .margin
+#body .page .mid .mid_port .margin
 {
   width:100%;
   height:40px;
 }
 #body .page section
 {
-  width:calc(100% - 40px);
-  padding:10px;
+  width:calc(100% - 20px);
   margin:10px;
 }
-#body .page section *:first-child
+#body .page section
+{
+  border-bottom:5px solid #AECC00;
+}
+#body .page section article
+{
+  width:calc(100% - 20px);
+  padding:10px;
+  margin-bottom:10px;
+  background:white;
+}
+#body .page section article.text h3
+{
+  padding:0px;
+  margin:0px;
+  font-size:25px;
+  border-bottom:1px solid rgb(180,180,180);
+}
+#body .page section article.text .time
+{
+  color:gray;
+  font-family:Enriqueta;
+  font-weight:bold;
+}
+#body .page section article.text p
+{
+  min-height:100px;
+  max-height:150px;
+  margin:0px;
+  overflow:hidden;
+}
+#body .page section article.text .read
+{
+  width:100%;
+  text-align:right;
+  color:#AECC00;
+}
+#body .page section article.picture
+{
+  
+}
+#body .page section article.picture h3
+{
+  color:white;
+}
+#body .page section article.picture .time
+{
+  color:white;
+  font-family:Enriqueta;
+  font-weight:bold;
+}
+#body .page section article.picture p
+{
+  min-height:100px;
+  max-height:150px;
+  margin:0px;
+  overflow:hidden;
+  color:white;
+}
+#body .page section article.picture .tags
+{
+  width:100%;
+  color:white;
+}
+#body .page section article.picture .read
+{
+  width:100%;
+  text-align:right;
+  color:white;
+}
+#body .page section p a
+{
+  color:#AECC00;
+  border-bottom:1px solid #AECC00;
+}
+#body .page section .quote
+{
+  padding:10px;
+  margin:0px;
+  margin-bottom:10px;
+  font-size:20px;
+  text-align:center;
+  color:rgb(184,184,184);
+  border-top:2px solid rgb(180,180,180);
+  border-bottom:2px solid rgb(180,180,180);
+}
+#body .page section .quote:before
+{
+  content:"\"";
+}
+#body .page section .quote:after
+{
+  content:"\"";
+}
+#body .page section img
+{
+  width:100%;
+  height:auto;
+  margin:0px;
+  margin-bottom:10px;
+}
+#body .page section pre
+{
+  max-width:calc(100% - 20px);
+  padding:10px;
+  margin:0px;
+  margin-bottom:10px;
+  color:white;
+  background:rgb(48,48,48);
+  overflow-x:scroll;
+}
+#body .page section p
 {
   margin:0px;
+  margin-bottom:10px;
+  color:black;
+}
+#body .page section h3
+{
+  padding:0px;
+  margin:0px;
+  margin-bottom:10px;
+  font-size:25px;
+  border-bottom:1px solid rgb(180,180,180);
+}
+#body .page section h2
+{
+  padding:0px;
+  padding-left:10px;
+  margin:0px;
+  margin-bottom:10px;
+  font-family:Enriqueta;
+  font-size:30px;
+}
+#body .page section h2
+{
+  color:#AECC00;
 }
 #body .page h1
 {
   padding:10px;
   margin:10px;
-  font-size:30px;
+  font-size:35px;
   text-align:center;
 }
-
-@media all and (min-width:540px) {
-  #body .page .mid
-  {
-    width:1px;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:50%;
-  }
-  #body .page .mid_port
-  {
-    width:500px;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:-250px;
-  }
+#body .page h1
+{
+  border-bottom: 5px solid #AECC00;
+  border-top: 5px solid #AECC00;
+  color:black;
 }
-@media all and (min-width:740px) {
-  #body .page .mid
-  {
-    width:1px;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:50%;
-  }
-  #body .page .mid_port
-  {
-    width:700px;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:-350px;
-  }
+#blog_posts .loadMore,#blogTags_news .loadMore
+{
+  height:100px;
+  text-align:center;
+  line-height:100px;
 }
-@media all and (min-width:1040px) {
-  #body .page .mid
-  {
-    width:1px;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:50%;
-  }
-  #body .page .mid_port
-  {
-    width:1000px;
-    height:100%;
-    position:absolute;
-    top:0px;
-    left:-500px;
-  }
+#blog_tags h3
+{
+  text-align:center;
+  color:#AECC00;
+  border:none !important;
+}
+#blog_tags h3:before
+{
+  content:"#";
+}
+#article_comments .refresh
+{
+  padding:20px;
+  text-align:center;
+}
+#article_comments .comment
+{
+  min-height:100px;
+}
+#article_comments .comment .top
+{
+  height:40px;
+  font-size:0px;
+}
+#article_comments .comment .top .timestamp
+{
+  width:calc(100% - 62px);
+  height:20px;
+  position:relative;
+  top:-16px;
+  padding:10px;
+  font-size:15px;
+  display:inline-block;
+  border-right:1px solid rgb(180,180,180);
+}
+#article_comments .comment .top .button
+{
+  width:40px;
+  height:40px;
+  display:inline-block;
+}
+#article_comments .comment .top .button:active
+{
+  
+}
+#article_comments .comment .top .button.active
+{
+  background:gray;
+}
+#article_comments .comment .bottom
+{
+  min-height:40px;
+  margin:10px;
+}
+#article_commentEntry_body
+{
+  height:160px;
+}
+#article_commentEntry_body textarea
+{
+  width:calc(100% - 40px);
+  height:80px;
+  max-height:80px;
+  padding:10px;
+  margin:10px;
+  border:none;
+  border-bottom:1px solid #AECC00;
+  outline:none;
+}
+#article_commentEntry_body .button
+{
+  width:calc(100% - 20px);
+  padding:10px;
+  font-size:15px;
+  text-align:center;
+  color:white;
+  background:rgb(200,200,200);
 }

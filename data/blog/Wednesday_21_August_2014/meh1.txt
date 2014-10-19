@@ -1,0 +1,16 @@
+>Meh1<
+>>SUBTITLE<<
+>>>HEADING<<<
+Just plain text.\p
+[*code \type="javascript" \src="path_to_file.js" *]
+[*code \type="javascript"
+the.code.that.is.inline();
+*]
+[*img \src="path.to.img.jpg" *]
+[*quote
+I see trees of green.
+*]
+Some more text after with a \a="a_place.html link after".
+Oh and \p
+>>>>Heading<<<<
+A new paragraph.\p

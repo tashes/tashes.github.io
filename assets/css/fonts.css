@@ -1,0 +1,16 @@
+@font-face
+{
+  font-family:Fira;
+  src:url('../font/FiraMonoOT-Regular.otf');
+}
+@font-face
+{
+  font-family:Enriqueta;
+  src:url('../font/Enriqueta-Regular.otf');
+}
+@font-face
+{
+  font-family:Enriqueta;
+  font-weight:bold;
+  src:url('../font/Enriqueta-Bold.otf');
+}

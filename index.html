@@ -1,152 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>A life's journal</title>
+    <title>A Life's Journal</title>
     <link rel="stylesheet" href="assets/css/styles.css"/>
-    <link rel="stylesheet" href="assets/css/fonts.css"/>
+    <link rel="stylesheet" href="assets/css/colours.css"/>
     <meta name="viewport" content="width=device-width,user-scalable=no"/>
   </head>
   <body>
     <div id="viewport">
       <div id="body">
-        <div class="page active" id="home">
-          <div class="mid">
-            <div class="mid_port">
-              <div class="margin"></div>
-              <h1>A Life's Journal</h1>
-              <section class="links" id="home_latest">
-                <h2>Latest News</h2>
-              </section>
-              <!--<section>
-                <h2>Artwork</h2>
-                <article background="url(')"
-              </section>-->
-            </div>
-          </div>
-        </div>
-        <div class="page" id="projects">
+        <!--Pages go in here-->
+        <div id="home" class="page active">
           <div class="margin"></div>
-          Projects
+          <section>
+            <h1>Latest News</h1>
+            <div id="home_latest"></div>
+          </section>
+          <section>
+            <h1>Sketches and Art</h1>
+            <div id="home_art"></div>
+          </section>
         </div>
-        <div class="page" id="blog">
-          <div class="mid">
-            <div class="mid_port">
-              <div class="margin"></div>
-              <h1>Blog</h1>
-              <section id="blog_posts">
-                <h2>Posts</h2>
-              </section>
-              <section id="blog_tags">
-                <h2>Tags</h2>
-              </section>
-            </div>
-          </div>
+        <div id="blog" class="page">
+          <div class="margin"></div>
+          <section>
+            <h1>Blog Posts</h1>
+            <div id="blog_posts"></div>
+          </section>
         </div>
-        <div class="page" id="about">
-          <div class="mid">
-            <div class="mid_port">
-              <div class="margin"></div>
-              <h1>About Me</h1>
-              <section id="about_summary">
-                <p>Some things about moi.</p>
-              </section>
-              <section id="about_achievments">
-                <h2>Achievments<h2>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div class="page" id="article">
-          <div class="mid">
-            <div class="mid_port">
-              <div class="margin"></div>
-              <h1 id="article_title">Same Title</h1>
-              <section id="article_content">
-                <h2>Subtitle</h2>
-                <h3>Heading</h3>
-                <p>Textual facts and all</p>
-                <pre>
-some.java;
-#or cpp
-$or whatever->code you_want();
-     or(.pys) can work as well
-     Some really long code that I dont know what it will end up looking like.
-                </pre>
-                <img src="assets/img/back.jpg"/>
-                <div class="quote">Some quoted text</div>
-                <p>Some more text after. <a>Some text that is actually a link</a> :P</p>
-              </section>
-              <section id="article_tags">
-                <h2>#Tags</h2>
-                <p><span>#philosiphy</span></p>
-              </section>
-              <!--<section id="article_comments">
-                <!--<h2>Comments</h2>
-                <div id="article_comments">
-                  <article class="refresh">Refresh</article>
-                  <article class="comment">
-                    <div class="top">
-                      <div class="timestamp">21/8/2014 @ 16:48</div>
-                      <div class="button"></div>
-                      <div class="button"></div>
-                      <div class="button"></div>
-                    </div>
-                    <div class="bottom">
-The comment body
-                    </div>
-                  </article>
-                  <article class="comment">
-                    <div class="top">
-                      <div class="timestamp">21/8/2014 @ 16:48</div>
-                      <div class="button"></div>
-                    </div>
-                    <div class="bottom">
-The comment body
-                    </div>
-                  </article>
-                </div>
-                <article id="article_commentEntry">
-                  <div id="article_commentEntry_anim"></div>
-                  <div id="article_commentEntry_body">
-                    <textarea></textarea>
-                    <div id="article_commentEntry_body_captcha"></div>
-                    <div class="button">Post Comment</div>
-                  </div>
-                </article>->
-              </section>-->
-            </div>
-          </div>
-        </div>
-        <div class="page" id="blogTags">
-          <div class="mid">
-            <div class="mid_port">
-              <div class="margin"></div>
-              <h1 id="blogTags_title">Tag Name</h1>
-              <section id="blogTags_news">
-                
-              </section>
-            </div>
-          </div>
-        </div>
+        <div id="projects" class="page"></div>
+        <div id="about" class="page"></div>
       </div>
       <div id="head" class="title">
-        <div id="head_title">
-          <div id="head_title_text">Title and some thing about the place...</div>
-          <div id="head_title_date">Mon 14<sup>th</sup> March 1996</div>
-          <div id="head_title_loading">
-            <canvas id="head_title_loading_canvas"></canvas>
+        <div id="head_top">
+          <div id="head_top_title">A Life's Journal</div>
+          <div id="head_top_date">A Date</div>
+          <div id="head_top_animator">
+            <canvas id="head_top_animator_canvas" class="forcedShow"></canvas>
           </div>
         </div>
         <div id="head_menu">
-          <div class="button active" id="home_button">Home</div>
-          <div class="button" id="projects_button">Projects</div>
-          <div class="button" id="blog_button">Blog</div>
-          <div class="button" id="about_button">About</div>
+          <div id="head_menu_title">A Life's Journal</div>
+          <div id="head_menu_bar">
+            <!-- The buttons for the different main pages -->
+            <div class="button active">Home</div>
+            <div class="button">Blog</div>
+            <div class="button">Projects</div>
+            <div class="button">About</div>
+          </div>
         </div>
-        
       </div>
     </div>
 
+
+    <script src="assets/js/support.js"></script>
+    <script src="assets/js/head.js"></script>
+    <script src="assets/js/pages.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

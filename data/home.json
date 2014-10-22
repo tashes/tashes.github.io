@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "blog": [
     {
       "title": "Meh",
       "date": "Wednesday 28th December 2014",
@@ -19,6 +19,12 @@
       ],
       "background": "url('data/blog/Sunday_20th_August_2014/Some_tuts/cover.png')",
       "link": "data/blog/Sunday_20th_August_2014/Some_tuts.txt"
+    }
+  ],
+  "art": [
+    {
+      "title": "boxes",
+      "link": "data/art/boxes/img.jpg"
     }
   ]
 }

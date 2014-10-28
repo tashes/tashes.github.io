@@ -8,8 +8,7 @@
         "mankind",
         "somereallylongtag"
       ],
-      "background": "rgb(20,20,20)",
-      "link": "data/blog/Wednesday_28th_December_2014/Meh.txt"
+      "background": "rgb(20,20,20)"
     },
     {
       "title": "Some tuts",
@@ -17,8 +16,10 @@
       "tags": [
         "code"
       ],
-      "background": "url('data/blog/Sunday_20th_August_2014/Some_tuts/cover.png')",
-      "link": "data/blog/Sunday_20th_August_2014/Some_tuts.txt"
+      "background": "url('data/blog/Sunday_20th_August_2014/Some_tuts/cover.png')"
     }
+  ],
+  "tags": [
+    
   ]
 }

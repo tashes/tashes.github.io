@@ -162,6 +162,11 @@ body
   padding:10px;
   margin:10px;
 }
+#article_date
+{
+  text-align:right;
+  color:gray;
+}
 #body .page section h1
 {
   padding:5px;
@@ -190,6 +195,11 @@ body
 {
   padding:5px;
   margin:5px;
+}
+#home_art article h2
+{
+  text-align:right;
+  border:none !important;
 }
 body .page section article .link
 {

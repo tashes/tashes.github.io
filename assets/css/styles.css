@@ -39,6 +39,13 @@ body
   top:0px;
   left:0px;
   background:rgb(33, 47, 61);
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+#head_bg.static
+{
+  transition:background-image 0.4s;
 }
 #head_bar
 {
@@ -46,6 +53,11 @@ body
   position:absolute;
   top:0px;
   left:0px;
+  transition:all 0.4s;
+}
+#head_bar.bg
+{
+  background:rgba(25,25,25,0.48);
 }
 #head_bar_inner
 {

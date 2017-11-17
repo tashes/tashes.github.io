@@ -57,7 +57,7 @@ body
 }
 #head_bar.bg
 {
-  background:rgba(25,25,25,0.48);
+  background:rgb(25,25,25);
 }
 #head_bar_inner
 {
@@ -108,6 +108,11 @@ body
   position:absolute;
   top:80%;
   animation:fadein 0.8s;
+  background:rgb(242, 243, 244);
+}
+#body > div
+{
+  display:none;
 }
 #body_loading
 {
@@ -116,6 +121,11 @@ body
   position:absolute;
   top:0px;
   left:0px;
+  display:block !important;
+}
+#body[class] > #body_loading
+{
+  display:none !important;
 }
 #body_loading_mid
 {
@@ -137,4 +147,25 @@ body
 {
   width:100%;
   height:100%;
+}
+#body.posts > #body_posts
+{
+  display:block !important;
+}
+#body_posts .post
+{
+  padding:16px;
+}
+#body_posts .post:hover
+{
+  background:rgb(215, 219, 221);
+}
+#body_posts .post > img
+{
+  width:100%;
+  height:auto;
+}
+#body_posts .post > .date
+{
+  text-align:center;
 }

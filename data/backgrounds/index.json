@@ -1,6 +1,6 @@
 {
-  "default": "nameimage.jpg",
-  "searchterms": {
+  "default": "banner.jpg",
+  "tags": {
     "systemics": "systemics.jpg",
     "bertang": "bertang.gif"
   }

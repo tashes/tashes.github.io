@@ -5,13 +5,13 @@
 
   function loadImage (name) {
     var image = new Image();
-    image.src = "data/backgrounds/" + name;
     image.onload = function () {
       HEADBAR.style.background = new Vibrant(image, 64, 100).MutedSwatch.getHex();
       BG.className = "static";
       BG.style.backgroundImage = "url('" + this.src + "')";
       HEADBAR.className = "bg";
     };
+    image.src = "data/backgrounds/" + name;
   }
 
   window.addEventListener("load", function () {
@@ -26,13 +26,13 @@
         loadImage(imagelist.default);
       }
       // setup listeners
-      document.getElementById('head_bar_inner_searchbar_search').addEventListener("change", function () {
+      document.getElementById('head_bar_inner_searchbar_search').addEventListener("input", function () {
         var flag = false;
         var value = this.value.toLowerCase();
-        var keys = Object.keys(LIST.searchterms);
-        for (item in LIST.searchterms) {
+        var keys = Object.keys(LIST.tags);
+        for (item in LIST.tags) {
           if (item === value) {
-            flag = LIST.searchterms[item];
+            flag = LIST.tags[item];
             break;
           }
         }

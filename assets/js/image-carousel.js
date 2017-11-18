@@ -8,7 +8,7 @@
     var image = new Image();
     image.onload = function () {
       var vib = new Vibrant(image, 64, 100);
-      HEADBAR.style.background = vib.DarkMutedSwatch.getHex();
+      HEADBAR.style.background = "rgba(" + vib.DarkMutedSwatch.getRgb().join(",") + ",0.92)";
       HEADTEXT.style.color = vib.LightVibrantSwatch.getHex();
       document.getElementById('head_bar_inner_searchico_ico_pt1').style.stroke = vib.LightVibrantSwatch.getHex();
       document.getElementById('head_bar_inner_searchico_ico_pt2').style.stroke = vib.LightVibrantSwatch.getHex();

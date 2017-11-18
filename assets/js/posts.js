@@ -6,7 +6,7 @@
 
   function createPostCards (item) {
     var content = `<div class="post"><div class="name">` + item.name + `</div><img src="data/posts/` + item.link + `/banner.jpg"/><div class="date">` +  moment(item.datetime).format("ddd, Do MMMM YYYY") + `</div></div>`;
-    return `<a href="post.html/#/` + item.link + `" target="_blank"><div class="col-` + Math.round(12/POSTSPERROW) + `">` + content + `</div></a>`;
+    return `<a href="post/#/` + item.link + `" target="_blank"><div class="col-` + Math.round(12/POSTSPERROW) + `">` + content + `</div></a>`;
   };
   function renderList (list) {
     if (list.length > 0) {

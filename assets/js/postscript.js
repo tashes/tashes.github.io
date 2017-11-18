@@ -2,6 +2,7 @@
   var PARTS_BANNER_DIV = document.getElementById('page_top_banner_div');
   var PARTS_BANNER_IMG = document.getElementById('page_top_banner_img');
   var PARTS_HEADER = document.getElementById('page_top_header_h');
+  var PARTS_TAG = document.getElementById('page_top_info_tag');
   var PARTS_AUTHOR = document.getElementById('page_top_info_author');
   var PARTS_DATE = document.getElementById('page_top_info_date');
   var PARTS_BODY = document.getElementById('page_body_inner');
@@ -30,6 +31,7 @@
       document.querySelector('title').innerHTML = info.title + " | Tashes";
       PARTS_HEADER.innerHTML = info.title;
       PARTS_AUTHOR.innerHTML = info.author;
+      PARTS_TAG.innerHTML = info.tag;
       PARTS_DATE.innerHTML = moment(info.date).format("DD/MM/YYYY");
     })
     // get article

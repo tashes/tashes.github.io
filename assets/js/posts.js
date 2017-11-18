@@ -26,6 +26,38 @@
       POSTS.innerHTML = `<div class="row"><div class="col-12 empty">Nothing Found.</div></div>`
     }
   };
+  function listener () {
+    BODY.removeAttribute('className');
+    var value = document.getElementById('head_bar_inner_searchbar_search').value.toLowerCase();
+    var modlist = [];
+    // check if tag
+    if (isTag(value)) {
+      // treat as tag
+      modlist = LIST.filter(function (item) {
+        if (item.tags.indexOf(value) > -1) {
+          return true;
+        }
+      });
+      renderList(modlist);
+    }
+    else if (value === "" || /^\s*$/.test(value)) {
+      modlist = list;
+    }
+    else {
+      // treat as keyword
+      modlist = [];
+      value.split(" ").forEach(function (searchterm) {
+        if (!(searchterm === "" && /^\s$/.test(searchterm))) {
+          modlist = modlist.concat(LIST.filter(function (item) {
+            if (item.keywords.filter(i => i.search(searchterm) > -1).length > 0 || item.tags.filter(i => i.search(searchterm) > -1).length > 0 || item.name.split(" ").map(item => item.toLowerCase()).filter(i => i.search(searchterm) > -1).length > 0) {
+              return true;
+            }
+          }));
+        }
+      });
+    }
+    renderList(modlist);
+  }
 
   window.addEventListener("load", function () {
     // get the posts data
@@ -38,39 +70,9 @@
       renderList(list);
       BODY.className = "posts";
       // add listeners
-      document.getElementById('head_bar_inner_searchbar_search').addEventListener('input', function () {
-        BODY.removeAttribute('className');
-        var value = this.value.toLowerCase();
-        var modlist = [];
-        // check if tag
-        if (isTag(value)) {
-          // treat as tag
-          modlist = LIST.filter(function (item) {
-            if (item.tags.indexOf(value) > -1) {
-              return true;
-            }
-          });
-          renderList(modlist);
-        }
-        else if (value === "" || /^\s*$/.test(value)) {
-          modlist = list;
-        }
-        else {
-          // treat as keyword
-          modlist = [];
-          value.split(" ").forEach(function (searchterm) {
-            if (!(searchterm === "" && /^\s$/.test(searchterm))) {
-              modlist = modlist.concat(LIST.filter(function (item) {
-                if (item.keywords.filter(i => i.search(searchterm) > -1).length > 0 || item.tags.filter(i => i.search(searchterm) > -1).length > 0 || item.name.split(" ").map(item => item.toLowerCase()).filter(i => i.search(searchterm) > -1).length > 0) {
-                  console.log(item);
-                  return true;
-                }
-              }));
-            }
-          });
-        }
-        renderList(modlist);
-      });
+      document.getElementById('head_bar_inner_searchbar_search').addEventListener('input', listener);
     });
   });
+
+  window.forceSearchPosts = listener;
 })();

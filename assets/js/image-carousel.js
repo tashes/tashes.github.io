@@ -18,6 +18,23 @@
     };
     image.src = "data/backgrounds/" + name;
   }
+  function listener () {
+    var flag = false;
+    var value = document.getElementById('head_bar_inner_searchbar_search').value.toLowerCase();
+    var keys = Object.keys(LIST.tags);
+    for (item in LIST.tags) {
+      if (item === value) {
+        flag = LIST.tags[item];
+        break;
+      }
+    }
+    if (flag !== false) {
+      loadImage(flag);
+    }
+    else {
+      loadImage(LIST.default);
+    }
+  }
 
   window.addEventListener("load", function () {
     // Get the image data
@@ -31,23 +48,7 @@
         loadImage(imagelist.default);
       }
       // setup listeners
-      document.getElementById('head_bar_inner_searchbar_search').addEventListener("input", function () {
-        var flag = false;
-        var value = this.value.toLowerCase();
-        var keys = Object.keys(LIST.tags);
-        for (item in LIST.tags) {
-          if (item === value) {
-            flag = LIST.tags[item];
-            break;
-          }
-        }
-        if (flag !== false) {
-          loadImage(flag);
-        }
-        else {
-          loadImage(LIST.default);
-        }
-      });
+      document.getElementById('head_bar_inner_searchbar_search').addEventListener("input", listener);
     });
   });
 
@@ -59,4 +60,5 @@
       return false;
     }
   };
+  window.forceSearchImage = listener;
 })();

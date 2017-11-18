@@ -65,7 +65,6 @@ body
   height:48px;
   margin:16px auto;
   display:flex;
-  border-bottom:1px solid white;
 }
 #head_bar_inner > div
 {
@@ -108,7 +107,7 @@ body
   position:absolute;
   top:80%;
   animation:fadein 0.8s;
-  background:rgb(242, 243, 244);
+  background:rgb(251, 252, 252);
 }
 #body > div
 {
@@ -152,13 +151,21 @@ body
 {
   display:block !important;
 }
+#body_posts .empty
+{
+  text-align:center;
+  margin-top:32px;
+  font-size:48px;
+  color:rgb(121, 125, 127);
+}
 #body_posts .post
 {
   padding:16px;
+  animation:fadein 0.4s;
 }
 #body_posts .post:hover
 {
-  background:rgb(215, 219, 221);
+  background:rgb(236, 240, 241);
 }
 #body_posts .post > img
 {

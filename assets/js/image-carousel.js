@@ -2,11 +2,16 @@
   var LIST = [];
   var BG = document.getElementById('head_bg');
   var HEADBAR = document.getElementById('head_bar');
+  var HEADTEXT = document.getElementById('head_bar_inner_searchbar_search');
 
   function loadImage (name) {
     var image = new Image();
     image.onload = function () {
-      HEADBAR.style.background = new Vibrant(image, 64, 100).MutedSwatch.getHex();
+      var vib = new Vibrant(image, 64, 100);
+      HEADBAR.style.background = vib.DarkMutedSwatch.getHex();
+      HEADTEXT.style.color = vib.LightVibrantSwatch.getHex();
+      document.getElementById('head_bar_inner_searchico_ico_pt1').style.stroke = vib.LightVibrantSwatch.getHex();
+      document.getElementById('head_bar_inner_searchico_ico_pt2').style.stroke = vib.LightVibrantSwatch.getHex();
       BG.className = "static";
       BG.style.backgroundImage = "url('" + this.src + "')";
       HEADBAR.className = "bg";
@@ -45,4 +50,13 @@
       });
     });
   });
+
+  window.isTag = function (txt) {
+    if (Object.keys(LIST.tags).indexOf(txt) > -1) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  };
 })();

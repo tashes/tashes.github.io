@@ -52,13 +52,5 @@
     });
   });
 
-  window.isTag = function (txt) {
-    if (Object.keys(LIST.tags).indexOf(txt) > -1) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  };
   window.forceSearchImage = listener;
 })();

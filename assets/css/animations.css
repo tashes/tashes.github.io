@@ -10,3 +10,15 @@
     opacity:1;
   }
 }
+@keyframes fadedown {
+  0% {
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  80% {
+    transform:translateY(0px);
+  }
+  100% {
+    opacity:1;
+  }
+}

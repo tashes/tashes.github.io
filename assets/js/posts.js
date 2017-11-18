@@ -6,7 +6,7 @@
 
   function createPostCards (item) {
     var content = `<div class="post"><div class="name">` + item.name + `</div><img src="data/posts/` + item.link + `/banner.jpg"/><div class="date">` +  moment(item.datetime).format("ddd, Do MMMM YYYY") + `</div></div>`;
-    return `<a href="posts.html/#/` + item.link + `" target="_blank"><div class="col-` + Math.round(12/POSTSPERROW) + `">` + content + `</div></a>`;
+    return `<a href="post.html/#/` + item.link + `" target="_blank"><div class="col-` + Math.round(12/POSTSPERROW) + `">` + content + `</div></a>`;
   };
   function renderList (list) {
     if (list.length > 0) {
@@ -34,14 +34,14 @@
     if (isTag(value)) {
       // treat as tag
       modlist = LIST.filter(function (item) {
-        if (item.tags.indexOf(value) > -1) {
+        if (item.tag === value) {
           return true;
         }
       });
       renderList(modlist);
     }
     else if (value === "" || /^\s*$/.test(value)) {
-      modlist = list;
+      modlist = LIST;
     }
     else {
       // treat as keyword
@@ -49,7 +49,7 @@
       value.split(" ").forEach(function (searchterm) {
         if (!(searchterm === "" && /^\s$/.test(searchterm))) {
           modlist = modlist.concat(LIST.filter(function (item) {
-            if (item.keywords.filter(i => i.search(searchterm) > -1).length > 0 || item.tags.filter(i => i.search(searchterm) > -1).length > 0 || item.name.split(" ").map(item => item.toLowerCase()).filter(i => i.search(searchterm) > -1).length > 0) {
+            if (item.keywords.filter(i => i.search(searchterm) > -1).length > 0 || item.tag.search(searchterm) > -1 || item.name.split(" ").map(item => item.toLowerCase()).filter(i => i.search(searchterm) > -1).length > 0) {
               return true;
             }
           }));

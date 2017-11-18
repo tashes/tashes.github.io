@@ -15,7 +15,7 @@
     return ele;
   };
   function listener () {
-    if (TIPS.className === "show") {
+    if (TIPS.className === "show" || TIPS.className === "show1") {
       TIPS.removeAttribute("class");
     }
     else {
@@ -34,4 +34,13 @@
     // Set listeners
     document.getElementById('head_bar_inner_searchico').addEventListener('click', listener);
   });
+
+  window.isTag = function (tag) {
+    if (TAGS.indexOf(tag) > -1) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  };
 })();

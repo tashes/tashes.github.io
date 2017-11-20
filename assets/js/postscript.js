@@ -31,7 +31,6 @@
       document.querySelector('title').innerHTML = info.title + " | Tashes";
       PARTS_HEADER.innerHTML = info.title;
       PARTS_AUTHOR.innerHTML = info.author;
-      PARTS_TAG.innerHTML = info.tag;
       PARTS_DATE.innerHTML = moment(info.date).format("DD/MM/YYYY");
     })
     // get article

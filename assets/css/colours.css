@@ -7,7 +7,8 @@ body
     font-family: 'Niramit', sans-serif;
 }
 #list,
-#article
+#article,
+#loading
 {
     background:white;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -16,18 +17,21 @@ body
 {
     background:lightblue;
 }
-#listing > .entry.date > time
+#listing > .entry.date > time,
+#article_preview > h1
 {
     color:lightblue;
     font-family: 'PT Mono', monospace;
 }
-#listing > .entry.date > time:active
+#listing > .entry.date > time:active,
+#article_preview > h1:active
 {
     color:blue;
 }
-#listing > .entry.article > article  > time
+#listing > .entry.article > article  > time,
+#article_preview > h2
 {
-    font-family: 'PT Mono', monospace;    
+    font-family: 'PT Mono', monospace;
 }
 #listing > .entry.article > article  > p
 {
@@ -41,25 +45,28 @@ body
 {
     color:blue;
 }
-#listing > .entry.article > article  > .bottom > span
+#listing > .entry.article > article  > .bottom > span,
+#article_preview > .tag
 {
     font-family: 'Niramit', sans-serif;
 }
-#listing > .entry.article > article  > .bottom > span:hover
+#listing > .entry.article > article  > .bottom > span:hover,
+#article_preview > .tag:hover
 {
     color:lightblue;
 }
-#listing > .entry.article > article  > .bottom > span:active
+#listing > .entry.article > article  > .bottom > span:active,
+#article_preview > .tag:active
 {
     color:blue;
 }
 
-#article hr
+#article_preview > hr
 {
     border-top-color: lightblue;
     color:lightblue;
 }
-#article hr::after
+#article_preview > hr::after
 {
     background: white;
 }

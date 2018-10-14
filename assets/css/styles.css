@@ -61,7 +61,8 @@ body
     margin-bottom:64px;
 }
 #list,
-#article
+#article,
+#loading
 {
     width:80%;
     padding:32px;
@@ -91,12 +92,14 @@ body
     margin-left:-155px;
     font-size:24px;
 }
-#listing > .entry.date > time
+#listing > .entry.date > time,
+#article_preview > h1
 {
     cursor:pointer;
     transition:margin-left 0.2s;
 }
-#listing > .entry.date > time:hover
+#listing > .entry.date > time:hover,
+#article_preview > h1:hover
 {
     margin-left:-8px;
 }
@@ -139,7 +142,8 @@ body
 {
     margin-left:163px;
 }
-#listing > .entry.article > article  > .bottom > span
+#listing > .entry.article > article  > .bottom > span,
+#article_preview > .tag
 {
     cursor:pointer;
 }
@@ -153,12 +157,17 @@ body
     opacity:1;
 }
 
-#article
+#article,
+#loading
 {
     padding: 32px;
     display:block;
 }
-#article hr
+#article_preview > .tag
+{
+    display:inline-block;
+}
+#article_preview > hr
 {
     overflow: visible; /* For IE */
     padding: 0;
@@ -166,7 +175,7 @@ body
     border-top: medium double;
     text-align: center;
 }
-#article hr::after
+#article_preview > hr::after
 {
     content: "§";
     display: inline-block;
@@ -181,4 +190,25 @@ body
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#loading
+{
+    height:400px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#spinner
+{
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.5s linear infinite;
 }

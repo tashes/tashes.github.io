@@ -1,9 +1,24 @@
 
 
+    // Hash poller
+    let txt = '';
+    function hashChanged (oldhash, newhash) {
+        console.log(oldhash, newhash);
+    };
+    let timer = setInterval(function () {
+        if (window.location.hash !== txt) {
+            // Callback
+            hashChanged(txt, window.location.hash);
+            txt = window.location.hash;
+        }
+    }, 100);
+
+
+    // Vue
     const App = new Vue({
         el: '#app',
         data: {
-            state: `article`, // article or list
+            state: `loading`, // article or list or loading
             search: ``,
             bg: `https://wallpaper-house.com/data/out/4/wallpaper2you_35824.jpg`,
             articles: [
@@ -36,11 +51,12 @@
                 
             ],
             article: {
-                state: 'loading',
+                state: 'preview',
                 loaded: 48,
                 date: '14102018',
                 time: '0804',
-                text: ''
+                text: '',
+                tag: 'MedicineLife',
             }
         },
         methods: {

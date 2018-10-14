@@ -45,12 +45,17 @@
                     <div id="article_preview" v-if="article.state === 'preview'">
                         <h1>{{article.date}}</h1>
                         <h2>{{article.time}}</h2>
+                        <div class="tag">{{article.tag}}</div>
                         <hr/>
                         <article v-html="article_html"></article>
                     </div>
                     <div id="article_loading" v-if="article.state === 'loading'">
                         <progress :value="article.loaded" max="100"></progress>
                     </div>
+                </section>
+                <!-- Loading Screen -->
+                <section id="loading" v-if="state === 'loading'">
+                    <div id="spinner"></div>
                 </section>
             </section>
         </div>

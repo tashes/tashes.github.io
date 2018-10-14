@@ -1,0 +1,65 @@
+body
+{
+    background:rgb(240,240,240);
+}
+#middleground > header > input
+{
+    font-family: 'Niramit', sans-serif;
+}
+#list,
+#article
+{
+    background:white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#line
+{
+    background:lightblue;
+}
+#listing > .entry.date > time
+{
+    color:lightblue;
+    font-family: 'PT Mono', monospace;
+}
+#listing > .entry.date > time:active
+{
+    color:blue;
+}
+#listing > .entry.article > article  > time
+{
+    font-family: 'PT Mono', monospace;    
+}
+#listing > .entry.article > article  > p
+{
+    font-family: 'Bitter', serif;
+}
+#listing > .entry.article > article  > .bottom > a
+{
+    font-family: 'Bitter', serif;
+}
+#listing > .entry.article:active > article  > .bottom > a
+{
+    color:blue;
+}
+#listing > .entry.article > article  > .bottom > span
+{
+    font-family: 'Niramit', sans-serif;
+}
+#listing > .entry.article > article  > .bottom > span:hover
+{
+    color:lightblue;
+}
+#listing > .entry.article > article  > .bottom > span:active
+{
+    color:blue;
+}
+
+#article hr
+{
+    border-top-color: lightblue;
+    color:lightblue;
+}
+#article hr::after
+{
+    background: white;
+}

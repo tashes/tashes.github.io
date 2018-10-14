@@ -25,7 +25,7 @@
                     <div id="line"></div>
                     <!-- Listing Article -->
                     <div id="listing">
-                        <div class="entry" v-for="item in articles" :class="(item.type === 'date') ? ('date') : ((item.type === 'article') ? ('article') : (''))" @click="">
+                        <div class="entry" v-for="item in articles" :class="(item.type === 'date') ? ('date') : ((item.type === 'article') ? ('article') : (''))" @click="handleEntryClick(item)">
                             <!-- Date Type of Entry -->
                             <time datetime="item.time" v-if="item.type === 'date'">{{moment(item.time).format("DDMMYYYY")}}</time>
                             <!-- Article Type of Entry -->

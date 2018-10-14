@@ -67,7 +67,12 @@
             renderMD (text) {
                 return text;
             },
-            
+            handleEntryClick (item) {
+                if (item.type === "date") {
+                    // Set search to the date
+                    this.search = moment(item.time).format("DDMMYYYY");
+                }
+            }
         },
         computed: {
             article_html () {

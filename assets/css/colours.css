@@ -15,18 +15,18 @@ body
 }
 #line
 {
-    background:lightblue;
+    background:#007991;
 }
 #listing > .entry.date > time,
 #article_preview > h1
 {
-    color:lightblue;
+    color:#38AECC;
     font-family: 'PT Mono', monospace;
 }
 #listing > .entry.date > time:active,
 #article_preview > h1:active
 {
-    color:blue;
+    color:#022F40;
 }
 #listing > .entry.article > article  > time,
 #article_preview > h2
@@ -39,32 +39,29 @@ body
 }
 #listing > .entry.article > article  > .bottom > a
 {
+    color:#38AECC;
     font-family: 'Bitter', serif;
 }
 #listing > .entry.article:active > article  > .bottom > a
 {
-    color:blue;
+    color:#022F40;
 }
 #listing > .entry.article > article  > .bottom > span,
 #article_preview > .tag
 {
     font-family: 'Niramit', sans-serif;
-}
-#listing > .entry.article > article  > .bottom > span:hover,
-#article_preview > .tag:hover
-{
-    color:lightblue;
+    color:#38AECC;
 }
 #listing > .entry.article > article  > .bottom > span:active,
 #article_preview > .tag:active
 {
-    color:blue;
+    color:#022F40;
 }
 
 #article_preview > hr
 {
-    border-top-color: lightblue;
-    color:lightblue;
+    border-top-color: #38AECC;
+    color:#38AECC;
 }
 #article_preview > hr::after
 {

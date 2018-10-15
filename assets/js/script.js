@@ -1,10 +1,24 @@
 
+    const ERRS = {
+        '404': 'Sorry, the page your were looking for isn\'t here!'
+    };
+    const BGS = {
+        default: {
+            b: '#007991',
+            a: '#38AECC'
+        },
+        MedicalStudies: {
+            b: '#F68E5F',
+            a: '#F5DD90'
+        },
+        Purple: {
+            b: 'https://i.imgur.com/Ilo6yCi.jpg',
+            a: '#000000'
+        }
+    };
 
     // Hash poller
     let txt = '';
-    const ERRS = {
-        '404': 'Sorry, the page your were looking for isn\'t here!'
-    }
     const pages = {
         async home (hash) {
             // set state to loading
@@ -237,12 +251,70 @@
             },
             bg () {
                 // Get tag via state of page
-                // let tag;
-                // switch (this.state) {
-                //     case "loading":
-                //         return `439A86`;
-                //     case "":
-                // }
+                let tag;
+                switch (this.state) {
+                    case "list":
+                        // Check search
+                        if (/^#.+$/.test(this.search)) {
+                            let searchterm = /^#(.+)$/.exec(this.search)[1];
+                            tag = searchterm;
+                        }
+                        break;
+                    case "article":
+                        if (this.article.tag) {
+                            tag = this.article.tag;
+                        }
+                        break;
+                }
+                // get image/colour from BGS
+                let g = BGS[tag] || BGS['default'];
+                let bg = g ? g.b : '#439A86';
+                // check if url or colour
+                if (/^#[0-9A-F]{6}$/.test(bg) || /^rgb\(\d{1,3},\d{1,3},\d{1,3}\)$/.test(bg)) {
+                    return bg;
+                }
+                else {
+                    // Preload image first
+                    new Promise(function (res, rej) {
+                        let img = new Image();
+                        img.onload = function () {
+                            res();
+                        }
+                        img.onerror = function () {
+                            rej();
+                        };
+                        img.src = bg;
+                    });
+                    return `url('${bg}')`;
+                }
+            },
+            fg () {
+                // Get tag via state of page
+                let tag;
+                switch (this.state) {
+                    case "list":
+                        // Check search
+                        if (/^#.+$/.test(this.search)) {
+                            let searchterm = /^#(.+)$/.exec(this.search)[1];
+                            tag = searchterm;
+                        }
+                        break;
+                    case "article":
+                        if (this.article.tag) {
+                            tag = this.article.tag;
+                        }
+                        break;
+                }
+                // get image/colour from BGS
+                let g = BGS[tag] || BGS['default'];
+                let fg = g ? g.a : '#FFFFFF';
+                // check if url or colour
+                if (/^#[0-9A-F]{6}$/.test(fg) || /^rgb\(\d{1,3},\d{1,3},\d{1,3}\)$/.test(fg)) {
+                    return fg;
+                }
+                else {
+                    return '#FFFFFF';
+                }
             }
         }
     });

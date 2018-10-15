@@ -15,7 +15,7 @@
     <div id="app">
         <div id="background" :style="{background: bg}"></div>
         <div id="middleground">
-            <header>
+            <header :style="{color: fg}">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Search" v-model="search" @keyup="handleSearch()"/>
             </header>
@@ -68,7 +68,7 @@
 
     <script src="assets/js/vue.js"></script>
     <script src="assets/js/moment.js"></script>
-    <script src="  https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script src="assets/js/showdown.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

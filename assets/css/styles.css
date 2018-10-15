@@ -18,6 +18,7 @@ body
     background-repeat:no-repeat;
     background-position:50% 50%;
     background-size:100% auto;
+    transition:background 0.2s;
 }
 #middleground
 {
@@ -36,7 +37,7 @@ body
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
+    transition:color 0.2s;
 }
 #middleground > header > i
 {
@@ -191,6 +192,7 @@ body
 {
     overflow: visible; /* For IE */
     padding: 0;
+    margin-top:16px;
     border: none;
     border-top: medium double;
     text-align: center;

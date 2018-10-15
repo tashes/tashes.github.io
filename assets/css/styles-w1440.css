@@ -1,0 +1,12 @@
+#background
+{
+    height:64%;
+}
+
+#list,
+#article,
+#loading
+{
+    width:1152px;
+    margin:0 auto;
+}

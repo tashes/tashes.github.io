@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css"/>
     <link rel="stylesheet" href="assets/css/styles-w425.css" media="all and (max-width:425px)"/>
+    <link rel="stylesheet" href="assets/css/styles-w1440.css" media="all and (min-width:1440px)"/>
     <link rel="stylesheet" href="assets/css/colours.css"/>
 </head>
 <body>
@@ -23,7 +24,7 @@
             <section>
                 <!-- Listing -->
                 <section id="list" v-if="state === 'list'">
-                    <div id="line"></div>
+                    <div id="line" :style="{background: bg}"></div>
                     <!-- Listing Article -->
                     <div id="listing">
                         <div class="entry" v-for="item in articles_list" :class="(item.type === 'date') ? ('date') : ((item.type === 'article') ? ('article') : (''))">

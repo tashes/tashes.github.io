@@ -1,0 +1,41 @@
+#middleground > header > input
+{
+    flex:1;
+    min-width:0;
+}
+
+#list,
+#article,
+#loading
+{
+    width:100%;
+    padding-left:32px;
+    margin:0px;
+}
+
+#listing > .entry
+{
+    margin-left:0px !important;
+}
+#listing > .entry.article
+{
+    margin-bottom:16px;
+}
+#listing > .entry.article > article > time,
+#listing > .entry.article > article > p,
+#listing > .entry.article > article > .bottom
+{
+    left:0px !important;
+    margin-left:0px !important;
+    float:none;
+}
+#listing > .entry.article > article > .bottom > a
+{
+    opacity:1 !important;
+}
+
+#article_preview > h2
+{
+    display:block;
+    float:none;
+}

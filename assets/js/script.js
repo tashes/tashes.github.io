@@ -1,4 +1,4 @@
-
+(function () {
     const ERRS = {
         '404': 'Sorry, the page your were looking for isn\'t here!'
     };
@@ -323,3 +323,4 @@
         // Set hash change
         hashChanged(undefined, window.location.hash);
     });
+})();

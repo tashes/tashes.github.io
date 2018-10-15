@@ -4,15 +4,15 @@
             "b": "#007991",
             "a": "#38AECC"
         },
-        "MedicalStudies": {
+        "medicalstudies": {
             "b": "#F68E5F",
             "a": "#F5DD90"
         },
-        "Purple": {
+        "purple": {
             "b": "https://i.imgur.com/Ilo6yCi.jpg",
             "a": "#000000"
         },
-        "Muffin": {
+        "muffin": {
             "b": "/data/resources/backgrounds/oceana.jpg",
             "a": "#FFFFFF"
         }

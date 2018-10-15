@@ -169,7 +169,7 @@
                 }
                 // Strict Tag String
                 else if (/^#.+$/.test(searchterm) === true) {
-                    let searchterm_ = /^#(.+)$/.exec(searchterm)[1];
+                    let searchterm_ = /^#(.+)$/.exec(searchterm)[1].toLowerCase();
                     let articles = this.articles;
                     let len = articles.length;
                     let results = [];
@@ -255,7 +255,7 @@
                         // Check search
                         if (/^#.+$/.test(this.search)) {
                             let searchterm = /^#(.+)$/.exec(this.search)[1];
-                            tag = searchterm;
+                            tag = searchterm.toLowerCase();
                         }
                         break;
                     case "article":
@@ -294,7 +294,7 @@
                         // Check search
                         if (/^#.+$/.test(this.search)) {
                             let searchterm = /^#(.+)$/.exec(this.search)[1];
-                            tag = searchterm;
+                            tag = searchterm.toLowerCase();
                         }
                         break;
                     case "article":

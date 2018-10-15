@@ -2,29 +2,17 @@
     const ERRS = {
         '404': 'Sorry, the page your were looking for isn\'t here!'
     };
-    const BGS = {
-        default: {
-            b: '#007991',
-            a: '#38AECC'
-        },
-        MedicalStudies: {
-            b: '#F68E5F',
-            a: '#F5DD90'
-        },
-        Purple: {
-            b: 'https://i.imgur.com/Ilo6yCi.jpg',
-            a: '#000000'
-        }
-    };
+    let PAGECOUNT = 0;
+    let BGS = {};
 
     // Hash poller
-    let txt = '';
+    let txt = window.location.hash;
     const pages = {
         async home (hash) {
             // set state to loading
             App.state = 'loading';
             // get the pages
-            let proarr = await fetch('/data/indicies/1.json').then(res => res.json());
+            let proarr = await fetch('/data/indicies/' + PAGECOUNT + '.json').then(res => res.json());
             // Mutate objects
             let arr = proarr.map(function (ele) {
                 if (ele.type === 'date') {
@@ -103,10 +91,20 @@
 
     const mdhtmlconv = new showdown.Converter();
 
+    async function init () {
+        // Set to load
+        App.state = 'loading';
+        // Get Config file
+        let conf = await fetch('/data/config.json').then(r => r.json());
+        // Set Backgrounds
+        BGS = conf.bgs;
+        // Set pagecount
+        PAGECOUNT = conf.pages;
+    };
     function switchtohome () {
         App.state = 'list';
         window.location.hash = '/';
-    }
+    };
 
     // Vue
     const App = new Vue({
@@ -319,6 +317,9 @@
         }
     });
 
-    window.addEventListener('load', function () {
-        if (window.location.hash === '') hashChanged(undefined, '');
+    window.addEventListener('load', async function () {
+        // Initialize
+        await init();
+        // Set hash change
+        hashChanged(undefined, window.location.hash);
     });

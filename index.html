@@ -48,7 +48,7 @@
                         <h1 @click="handleTimeClick(article.time)">{{moment(article.time).format("DDMMYYYY")}}</h1>
                         <h2>{{moment(article.time).format("hhmm")}}</h2>
                         <br/>
-                        <div class="tag" v-if="article.tag" @click="handleTagClick(article.tag)">#{{article.tag}}</div>
+                        <div class="tag" v-if="article.tag" @click="handleTagClick(article.tag)">#{{article.tag.toLowerCase()}}</div>
                         <hr/>
                         <article v-html="article_html"></article>
                     </div>

@@ -10,6 +10,7 @@ body
 #article,
 #loading
 {
+    color:#353A47;
     background:white;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -42,7 +43,7 @@ body
     color:#38AECC;
     font-family: 'Bitter', serif;
 }
-#listing > .entry.article:active > article  > .bottom > a
+#listing > .entry.article > article  > .bottom > a:active
 {
     color:#022F40;
 }
@@ -60,10 +61,27 @@ body
 
 #article_preview > hr
 {
-    border-top-color: #38AECC;
-    color:#38AECC;
+    color:#007991;
 }
 #article_preview > hr::after
 {
     background: white;
+}
+#article_preview > article
+{
+    color: #353A47;
+    font-family: 'Bitter', serif;
+}
+#spinner
+{
+    border: 16px solid #ffffff;
+    border-top-color: #38AECC;
+}
+#article_error h1
+{
+    font-family: 'PT Mono', monospace;
+}
+#article_error h2
+{
+    font-family: 'Niramit', sans-serif;
 }

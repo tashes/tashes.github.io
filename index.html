@@ -13,11 +13,11 @@
 </head>
 <body>
     <div id="app">
-        <div id="background" :style="{background: 'url(' + bg + ')'}"></div>
+        <div id="background" :style="{background: bg}"></div>
         <div id="middleground">
             <header>
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search" v-model="search"/>
+                <input type="text" placeholder="Search" v-model="search" @keyup="handleSearch()"/>
             </header>
             <section>
                 <!-- Listing -->
@@ -25,16 +25,16 @@
                     <div id="line"></div>
                     <!-- Listing Article -->
                     <div id="listing">
-                        <div class="entry" v-for="item in articles" :class="(item.type === 'date') ? ('date') : ((item.type === 'article') ? ('article') : (''))" @click="handleEntryClick(item)">
+                        <div class="entry" v-for="item in articles_list" :class="(item.type === 'date') ? ('date') : ((item.type === 'article') ? ('article') : (''))">
                             <!-- Date Type of Entry -->
-                            <time datetime="item.time" v-if="item.type === 'date'">{{moment(item.time).format("DDMMYYYY")}}</time>
+                            <time datetime="item.time" v-if="item.type === 'date'" @click="handleTimeClick(item.time)">{{moment(item.time).format("DDMMYYYY")}}</time>
                             <!-- Article Type of Entry -->
                             <article v-if="item.type === 'article'">                               
                                 <time>{{moment(item.time).format("hhmm")}}</time>
-                                <p>{{renderMD(item.text)}}</p>
+                                <p v-html="renderMD(item.text)"></p>
                                 <div class="bottom">
-                                    <span @click="">#{{item.tag}}</span>
-                                    <a>Read More</a>
+                                    <span v-if="item.tag" @click="handleTagClick(item.tag)">#{{item.tag}}</span>
+                                    <a @click="handleArticleClick(item)">Read More</a>
                                 </div>       
                             </article>
                         </div>
@@ -43,14 +43,19 @@
                 <!-- Individual Article -->
                 <section id="article" v-if="state === 'article'">
                     <div id="article_preview" v-if="article.state === 'preview'">
-                        <h1>{{article.date}}</h1>
-                        <h2>{{article.time}}</h2>
-                        <div class="tag">{{article.tag}}</div>
+                        <h1 @click="handleTimeClick(article.time)">{{moment(article.time).format("DDMMYYYY")}}</h1>
+                        <h2>{{moment(article.time).format("hhmm")}}</h2>
+                        <br/>
+                        <div class="tag" v-if="article.tag" @click="handleTagClick(article.tag)">#{{article.tag}}</div>
                         <hr/>
                         <article v-html="article_html"></article>
                     </div>
                     <div id="article_loading" v-if="article.state === 'loading'">
                         <progress :value="article.loaded" max="100"></progress>
+                    </div>
+                    <div id="article_error" v-if="article.state === 'error'">
+                        <h1>{{article.error}}</h1>
+                        <h2>{{article.error_flavour}}</h2>
                     </div>
                 </section>
                 <!-- Loading Screen -->
@@ -63,6 +68,7 @@
 
     <script src="assets/js/vue.js"></script>
     <script src="assets/js/moment.js"></script>
+    <script src="  https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

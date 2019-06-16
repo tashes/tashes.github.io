@@ -1,76 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Tashes</title>
-    <link rel="stylesheet" href="assets/css/normalize.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Bitter|Niramit|PT+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css"/>
-    <link rel="stylesheet" href="assets/css/styles-w425.css" media="all and (max-width:425px)"/>
-    <link rel="stylesheet" href="assets/css/styles-w1440.css" media="all and (min-width:1440px)"/>
-    <link rel="stylesheet" href="assets/css/colours.css"/>
-</head>
-<body>
-    <div id="app">
-        <div id="background" :style="{background: bg}"></div>
-        <div id="middleground">
-            <header :style="{color: fg}">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search" v-model="search" @keyup="handleSearch()"/>
-            </header>
-            <section>
-                <!-- Listing -->
-                <section id="list" v-if="state === 'list'">
-                    <div id="line" :style="{background: bg}"></div>
-                    <!-- Listing Article -->
-                    <div id="listing">
-                        <div class="entry" v-for="item in articles_list" :class="(item.type === 'date') ? ('date') : ((item.type === 'article') ? ('article') : (''))">
-                            <!-- Date Type of Entry -->
-                            <time datetime="item.time" v-if="item.type === 'date'" @click="handleTimeClick(item.time)">{{moment(item.time).format("DDMMYYYY")}}</time>
-                            <!-- Article Type of Entry -->
-                            <article v-if="item.type === 'article'">                               
-                                <time>{{moment(item.time).format("hhmm")}}</time>
-                                <p v-html="renderMD(item.text)"></p>
-                                <div class="bottom">
-                                    <span v-if="item.tag" @click="handleTagClick(item.tag)">#{{item.tag}}</span>
-                                    <a @click="handleArticleClick(item)">Read More</a>
-                                </div>       
-                            </article>
+<html>
+    <head>
+        <title>Here's Me</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Meera+Inimai|Palanquin+Dark&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/styles.css"/>
+        <link rel="stylesheet" media="all and (min-width: 720px)" href="assets/css/styles-w720.css"/>
+    </head>
+    <body>
+        <div id="viewport">
+            <div id="inner">
+                <header id="header">
+                    <div id="header_bg">
+                        <img src="data/main/bg.jpg"/>
+                    </div>
+                    <div id="header_oy">
+                        <h1>Here's Me</h1>
+                    </div>    
+                </header>
+                <section id="aboutme">
+                    <h1>About Me</h1>
+                    <div id="aboutme_cont">
+                        <div id="aboutme_cont_img">
+                            <img src="data/main/profile.jpg"/>
                         </div>
+                        <p id="aboutme_cont_text">Hello! It is I, Tashes! I'm currently as a medical student who's too curious for his own good. Some of my passions are medicine, art, computer science and a whole lot more! Here's my adventure in this world.</p>
                     </div>
                 </section>
-                <!-- Individual Article -->
-                <section id="article" v-if="state === 'article'">
-                    <div id="article_preview" v-if="article.state === 'preview'">
-                        <h1 @click="handleTimeClick(article.time)">{{moment(article.time).format("DDMMYYYY")}}</h1>
-                        <h2>{{moment(article.time).format("hhmm")}}</h2>
-                        <br/>
-                        <div class="tag" v-if="article.tag" @click="handleTagClick(article.tag)">#{{article.tag.toLowerCase()}}</div>
-                        <hr/>
-                        <article v-html="article_html"></article>
+                <nav id="links">
+                    <a href="mailto:tamatashwin@gmail.com"><img src="assets/img/mail.svg"/></a>
+                    <a href="https://www.instagram.com/tamatashwin/"><img src="assets/img/instagram.svg"/></a>
+                    <a href="https://www.youtube.com/channel/UCk2uTErJ9abF9XyPlFMs2fQ"><img src="assets/img/youtube2.svg"/></a>
+                    <a href="https://github.com/tashes"><img src="assets/img/github.svg"/></a>
+                </nav>
+                <section id="projects">
+                    <h1>Projects</h1>
+                    <div id="projects_list">
+                        <a href="">
+                            <article class="project">
+                                <h2>A Project</h2>
+                                <p>A description of the project...</p>
+                            </article>
+                        </a>
                     </div>
-                    <div id="article_loading" v-if="article.state === 'loading'">
-                        <progress :value="article.loaded" max="100"></progress>
-                    </div>
-                    <div id="article_error" v-if="article.state === 'error'">
-                        <h1>{{article.error}}</h1>
-                        <h2>{{article.error_flavour}}</h2>
-                    </div>
+                    <div id="projects_list_showmore">Show More!</div>
                 </section>
-                <!-- Loading Screen -->
-                <section id="loading" v-if="state === 'loading'">
-                    <div id="spinner"></div>
+                <section id="blog">
+                    <h1>Blog</h1>
                 </section>
-            </section>
+            </div>
         </div>
-    </div>
-
-    <script src="assets/js/vue.js"></script>
-    <script src="assets/js/moment.js"></script>
-    <script src="assets/js/showdown.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+    </body>
 </html>

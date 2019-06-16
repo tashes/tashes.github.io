@@ -9,6 +9,12 @@ body
     left:0;
     overflow:hidden;
     --spacing:16px;
+    --colours: blue;
+}
+
+.hide
+{
+    display:none;
 }
 
 #viewport
@@ -81,6 +87,10 @@ section
     color:white;
     box-sizing:border-box;
 }
+section:last-child
+{
+    margin-bottom:0 !important;
+}
 section h1
 {
     margin:24px 0;
@@ -138,6 +148,7 @@ section h1
     text-decoration:none;
     margin-bottom:var(--spacing);
     display:block;
+    cursor:pointer;
 }
 #projects_list a:last-child,
 #blog_list a:last-child

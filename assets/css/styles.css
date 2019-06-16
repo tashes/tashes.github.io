@@ -121,40 +121,53 @@ section h1
     padding:0 8px;
 }
 
-#projects
+#projects,
+#blog
 {
     width:100%;
 }
-#projects_list
+#projects_list,
+#blog_list
 {
     margin-bottom:var(--spacing);
 }
-#projects_list a
+#projects_list a,
+#blog_list a
 {
     color:black;
     text-decoration:none;
     margin-bottom:var(--spacing);
     display:block;
 }
-#projects_list a:last-child
+#projects_list a:last-child,
+#blog_list a:last-child
 {
     margin-bottom:0 !important;
 }
-#projects_list article
+#projects_list article,
+#blog_list article
 {
     background:white;
     border-radius:4px;
     padding:var(--spacing);
 }
-#projects_list article h2
+#projects_list article h2,
+#blog_list article h2
 {
+    font-size:1.5em;
     font-family: 'Meera Inimai', sans-serif;
 }
-#projects_list article p
+#projects_list article p,
+#blog_list article p
 {
     font-family: 'Palanquin Dark', sans-serif;
 }
-#projects_list_showmore
+#blog_list small
+{
+    font-family: 'Meera Inimai', sans-serif;    
+}
+#projects_list_showmore,
+#blog_list_showmore
 {
     border:1px solid rgba(255,255,255,0.8);
     font-family: 'Meera Inimai', sans-serif;

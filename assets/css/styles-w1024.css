@@ -1,0 +1,27 @@
+body
+{
+    --spacing:32px;
+    font-size:24px;
+}
+#inner
+{
+    width:1000px;
+    position: absolute;
+    left:calc((100vw - 1000px) / 2);
+}
+
+#aboutme_cont
+{
+    height:calc(100vh - 80px);
+    display:flex;
+    flex-direction:row;
+}
+#aboutme_cont_img
+{
+    height:100%;
+    transform:scale(1);
+}
+#aboutme_cont_text
+{
+    padding-left:var(--spacing);
+}
